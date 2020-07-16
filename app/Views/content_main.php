@@ -1,40 +1,6 @@
 
-<body class="d-flex flex-column h-100" onload="loadNews(); loadEvents()">
-    <!--NAVIGATION-->
-    <div>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm mx-auto m-4">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
-          <span>Menu</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navBarResponsive">
-          <ul class="navbar-nav mx-auto flex-wrap justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="about.html">ADMISSIONS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="about.html">RESEARCH</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">ABOUT US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="about.html">ALUMNI</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">CONTACT</a>
-            </li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
-    </div>
 
+<body class="d-flex flex-column h-100" onload="loadNews(); loadEvents()">
     <!--IMAGE HOT NEWS SLIDER-->
     <div class="container mx-auto mt-4 p-0" style="max-width: 1200px;">
     <div id="newsCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;">
@@ -189,14 +155,4 @@
       </video>
       <hr class="my-4">
     </div>
-    <!--BACK TO TOP-->
-    <div class="container-fluid text-center">
-      <div class="row">
-        <div class="col-sm-12">
-          <a href="#" class="mb-0" style="color: #D83963;">
-            <i class="fas fa-chevron-up"></i>
-            <h5>BACK TO TOP</h5>
-          </a>
-        </div>
-      </div>
-    </div>
+</body>

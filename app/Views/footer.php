@@ -1,3 +1,14 @@
+    <!--BACK TO TOP-->
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-sm-12">
+          <a href="#" class="mb-0" style="color: #D83963;">
+            <i class="fas fa-chevron-up"></i>
+            <h5>BACK TO TOP</h5>
+          </a>
+        </div>
+      </div>
+    </div>
 <footer class="mt-auto py-3">
       <div class="container-fluid padding" style="max-width: 1200px;">
         <div class="row padding">
