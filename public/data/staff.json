@@ -1,0 +1,48 @@
+{"ACADEMIC":
+        {"PROFESSOR":[
+                {
+                "name": "ABDULLAH BIN GANI, PROF. DR",
+                "email": "abdullahgani@ums.edu.my"
+                },
+                {
+                "name": "YONG JIN PARK, PROF. DR",
+                "email": "yjpark@ums.edu.my"
+                },
+                {
+                "name": "JASON TEO TZE WI, PROF. DR",
+                "email": "jtwteo@ums.edu.my"}]
+        ,
+        "ASSOCIATEPROFESSOR":[
+                {
+                "name": "AG ASRI HJ AG IBRAHIM, ASSOC. PROF. DR",
+                "email": "awgasri@ums.edu.my"},
+                {
+                "name": "SYED NASIRIN SYED ZAINOL ABIDIN, ASSOC. PROF. DR",
+                "email": "snasirin@ums.edu.my"},
+                {
+                "name": "NG GIAP WENG , ASSOC. PROF. DR",
+                "email": "nggiapweng@ums.edu.my"}]
+        ,
+        "SENIORLECTURER":[
+                {
+                        "name": "CHIN PEI YEE, DR",
+                        "email": "peiyee@ums.edu.my"},
+                {
+                        "name": "ERVIN GUBIN MOUNG, DR",
+                        "email": "ervin@ums.edu.my"},
+                {
+                        "name": "TAN SOO FUN, DR",
+                        "email": "soofun@ums.edu.my"}]
+        ,
+        "LECTURER":[
+                {
+                        "name": "AHMAD RIZAL AHMAD RODZUAN",
+                        "email": " arizal.arodzuan@gmail.com"},
+                {
+                        "name": "AINNECIA YOAG",
+                        "email": "ainnecia@ums.edu.my"},
+                {
+                        "name": "AINNUR HAFIZAH BINTI ANUAR MOKHTAR",
+                        "email": "ain_146@ums.edu.my"}]
+        }
+}

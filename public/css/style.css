@@ -1,0 +1,231 @@
+html{
+
+  scroll-behavior: smooth;
+
+}
+body{
+
+  background-color: #e7eefe;
+  min-width: 480px;
+}
+div{
+  /*border: 1px solid green;*/
+ 
+}
+
+header{
+
+  background-color: #06256C;
+}
+
+footer{
+  background-color: #D83963;
+  width: 100%;
+  bottom: 0;
+}
+
+.video{
+
+  max-width: 1200px;
+  width: 100%;
+  max-height: 675px;
+}
+
+.carousel-images{
+
+  height: 480px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#imageBox{
+
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  transition: transform .2s;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+#imageBox:hover {
+  transform: scale(1.1);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-item{
+  font-size: large;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar a{
+
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid #BD3364;
+}
+
+.navbar a.active {
+  border-bottom: 3px solid #BD3364;
+  font-weight: bold;
+}
+
+.mw-50{
+
+  max-width: 50%;
+
+}
+
+.mw-45{
+
+  max-width: 45%;
+}
+
+#sectionBox{
+
+  max-width: 48.75%;
+}
+
+#sectionBox a{
+
+  text-decoration: none;
+}
+
+
+.searchlink {
+  text-align: center;
+  font-size: 16px;
+  height: 48px;
+  width: 48px;
+  color: white;
+  border: 3px solid white;
+  display: block;
+  float: right;
+  padding: 10px 20px 15px 18.5px;
+  position: relative;
+}
+
+.search-form {
+  display: none;
+  position: absolute;
+  width: 320px;
+  top: 70px;
+  right: 10px;
+  padding: 10px;
+  z-index: 10;
+  background-color: #fff;
+}
+
+
+.news-list{
+
+  padding: 0;
+  list-style: none;
+}
+
+.event-date{
+
+  display: table-cell;
+  vertical-align: top;
+  
+}
+
+.event-date a:hover{
+
+  text-decoration: none;
+  color: white;
+  
+}
+
+.event-list-items{
+
+  height: 42px;
+  vertical-align: middle;
+  display: table-cell;
+  zoom: 1;
+  overflow: hidden;
+}
+  
+.event-date-style{
+
+  background-color: #06256C;  
+  color: white;
+  display: block;
+  font-weight: normal;
+  margin-right: 15px;
+  padding: 3px 0;
+  text-align: center;
+  width: 44px;
+
+}
+
+.event-date-style:hover{
+
+  background-color: #3C8BAE;  
+
+
+}
+
+.event-date-style .day{
+
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.event-date-style .month{
+
+  display: block;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 576px) {
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width: 1024px){
+
+  #sectionBox{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+
+  
+#imageBox{
+
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+}
