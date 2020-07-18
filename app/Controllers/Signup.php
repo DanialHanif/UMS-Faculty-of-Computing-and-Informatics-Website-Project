@@ -19,7 +19,7 @@ class Signup extends BaseController
 
 	public function addnew(){
 
-
+		
 
 	}
 

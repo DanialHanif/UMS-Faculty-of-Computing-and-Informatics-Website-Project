@@ -81,6 +81,14 @@ footer{
   font-weight: bold;
 }
 
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+
+
 .mw-50{
 
   max-width: 50%;
