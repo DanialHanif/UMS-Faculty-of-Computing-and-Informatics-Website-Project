@@ -1,6 +1,6 @@
 <body class="d-flex flex-column h-100">
     <main role="main" class="mx-auto flex-shrink-0" style="max-width: 1200px; width: 100%; background-color: white;">
-        <div class="jumbotron text-white" style="background-image: url(images/admission.jpg); background-repeat: no-repeat; background-size: cover;">
+        <div class="jumbotron text-white" style="background-image: url(img/admission.jpg); background-repeat: no-repeat; background-size: cover;">
         <h1>About us</h1>
         <h3>Faculty Of Computing and Informatics, Universiti Malaysia Sabah, Sabah, Malaysia.</h3>
       </div>

@@ -40,7 +40,7 @@
         <div class="collapse navbar-collapse mx-auto" id="navBarResponsive" style="max-width: 1200px">
             <ul class="navbar-nav mx-auto flex-wrap justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" href="Home">HOME</a>
+                    <a class="nav-link <?php echo ((stristr(uri_string(),"Home"))||(uri_string()==='/')? 'active':'')?>" href="Home">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="about.html">ADMISSIONS</a>
@@ -49,16 +49,16 @@
                     <a class="nav-link disabled" href="about.html">RESEARCH</a>
                 </li>
                 <li class="nav-item">
-              <a class="nav-link" href="About">ABOUT US</a>
+              <a class="nav-link <?php echo ((stristr(uri_string(),"About"))? 'active':'')?>" href="About">ABOUT US</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="about.html">ALUMNI</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Contact">CONTACT</a>
+                <a class="nav-link <?php echo ((stristr(uri_string(),"Contact"))? 'active':'')?>" href="Contact">CONTACT</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Login">LOGIN</a>
+                <a class="nav-link <?php echo ((stristr(uri_string(),"Login"))? 'active':'')?>" href="Login">LOGIN</a>
             </li>
         </ul>
     </div>

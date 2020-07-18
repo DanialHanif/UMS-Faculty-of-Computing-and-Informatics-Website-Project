@@ -1,6 +1,7 @@
 
 
 <body class="d-flex flex-column h-100" onload="loadNews(); loadEvents()">
+  <main role="main" class="mx-auto flex-shrink-0" style="max-width: 1200px; width: 100%; background-color: white;">
     <!--IMAGE HOT NEWS SLIDER-->
     <div class="container mx-auto mt-4 p-0" style="max-width: 1200px;">
     <div id="newsCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;">
@@ -155,4 +156,5 @@
       </video>
       <hr class="my-4">
     </div>
+  </main>
 </body>

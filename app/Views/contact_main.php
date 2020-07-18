@@ -169,6 +169,7 @@
             </tr>
           </tbody>
         </table>
+        <hr class="my-4">
       </div>
     </main>
 </body>
