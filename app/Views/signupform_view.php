@@ -13,6 +13,13 @@
                 .$validation->listErrors().
                 '</div>';
             }
+            if(isset($success)){
+                if($success == true){
+                echo '<div class="alert alert-success" role="alert"><a href='.base_url('Login').'>Registered Successfully! You may now Login!"</a></div>';
+                }else{
+                echo '<div class="alert alert-danger" role="alert">Signup error occured! Please try again!"</div>';
+                }
+            }
             ?>
         
             <form class="needs-validation" id="formSignUp" action="<?= base_url('Signup/addnew')?>" method="post">

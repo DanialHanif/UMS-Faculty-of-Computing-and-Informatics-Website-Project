@@ -135,20 +135,22 @@ class CustomerModel extends \CodeIgniter\Model
             return false;
         }
         
+
         
         if ($db->transStatus() === FALSE) {
-            
-            $db->transComplete();
-            $db->close();
-            return true;
-            //echo 'success!';
-            
-        } else {
             
             $db->transRollback();
             $db->close();
             return false;
             //echo 'error!';
+
+            
+        } else {
+            $db->transComplete();
+            $db->close();
+            return true;
+            //echo 'success!';
+
         }
     }
 

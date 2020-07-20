@@ -9,7 +9,6 @@ class Signup extends BaseController
 
 	public function index()
 	{
-		helper(['form', 'url']);
 		//view('welcome_message');
 		echo view('header');
 		echo view('signupform_view');
@@ -18,11 +17,11 @@ class Signup extends BaseController
 
 	public function addnew()
 	{
+		helper(['form', 'url']);
 		$session = session();
 		$model = new CustomerModel();
-		//$data['content'] = "formSignup";
-		$validation = \config\Services::validation();
-		$validation->setRules([
+		$data['content'] = "formSignup";
+		$rules = [
 			'cName' 		=> ['label' => 'Company Name', 'rules' => 'trim|required'],
 			'cFirstName'	=> ['label' => 'Contact Person\'s First Name', 'rules' => 'trim|required'],
 			'cLastName' 	=> ['label' => 'Contact Person\'s Last Name', 'rules' => 'trim|required'],
@@ -35,10 +34,10 @@ class Signup extends BaseController
 			'cPostal' 		=> ['label' => 'Post Code', 'rules' => 'trim|required|regex_match[/^[A-Z0-9]/]'],
 			'cEmail' 		=> ['label' => 'Login Email', 'rules' => 'trim|required|valid_email'],
 			'cPassword' 	=> ['label' => 'Login Password', 'rules' => 'trim|required|min_length[6]|max_length[20]']
-		]);
+		];
 
 		if ($this->request->getMethod() == 'post') {
-			if (!$validation->run()) {
+			if (!$this->validate($rules)) {
 				$data['validation'] = $this->validator;
 				echo 'failed';
 			} else {
@@ -56,8 +55,8 @@ class Signup extends BaseController
 				$data['custEmail'] = $this->request->getPost('cEmail');
 				$data['custPassword'] = $this->request->getPost('cPassword');
 
-				//$result = $model->insertNewCustomer($data);
-
+				$result = $model->insertNewCustomer($data);
+				$data['success'] = $result;
 			}
 			echo view('header');
 			echo view('signupform_view', $data);
