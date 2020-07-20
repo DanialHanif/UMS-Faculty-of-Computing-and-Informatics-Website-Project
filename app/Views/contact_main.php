@@ -10,7 +10,7 @@
         </div>
         <div class="container">
           <hr class="my-4">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation">
           <div class="form-group">
             <label for="email-address-form">Email address</label>
             <input required type="email" class="form-control" id="email-address-form" placeholder="Email">

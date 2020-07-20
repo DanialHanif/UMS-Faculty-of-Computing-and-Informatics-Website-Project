@@ -57,10 +57,10 @@
         </div>
     </footer>
      <!--Dependencies-->
-     <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/video.js"></script>
-    <script src="js/fontawesome.js" crossorigin="anonymous"></script>
+     <script src="<?= base_url('js/jquery-3.5.1.min.js')?>"></script>
+    <script src="<?= base_url('js/bootstrap.bundle.js')?>"></script>
+    <script src="<?= base_url('js/video.js')?>"></script>
+    <script src="<?= base_url('js/fontawesome.js')?>" crossorigin="anonymous"></script>
     <script>
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()

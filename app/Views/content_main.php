@@ -13,21 +13,21 @@
     
       <div class="carousel-inner">
         <div class="carousel-item active carousel-images">
-          <img class="carousel-images" src="img/background.jpg" style="filter: brightness(50%);">
+          <img class="carousel-images" src="<?= base_url('img/background.jpg')?>" style="filter: brightness(50%);">
           <div class="carousel-caption">
             <h1>Welcome to Universiti Malaysia Sabah</h1>
             <p>Faculty of Computing and Informatics</p>
           </div>
         </div>
         <div class="carousel-item carousel-images">
-          <img class="carousel-images" src="img/background2.jpeg" style="filter: brightness(50%);">
+          <img class="carousel-images" src="<?= base_url('img/background2.jpeg')?>" style="filter: brightness(50%);">
           <div class="carousel-caption">
             <h1>Majlis Serah Tugas & Penghargaan Sempena Perpindahan Kakitangan FKI</h1>
             <p>Pihak Fakulti ingin merakamkan ucapan setinggi-tinggi penghargaan dan  terima kasih kepada En. Azman Ismail dan Pn Ida Haslinda Muljana diatas jasa khidmat bakti sebagai kakitangan FKI.</p>
           </div>
         </div>
         <div class="carousel-item carousel-images">
-          <img class="carousel-images" src="img/background3.jpeg" style="filter: brightness(50%);">
+          <img class="carousel-images" src="<?= base_url('img/background3.jpeg')?>" style="filter: brightness(50%);">
           <div class="carousel-caption">
             <h1>Congratulation FKI-UMS!</h1>
             <p>Awarded 1st Runner Up and Special Honors Outstanding Achievement of Huawei ICT Academy in Huawei ICT Competition Malaysia Final 2019-2020.</p>
@@ -119,25 +119,25 @@
       <div class="row text-center">
         <div class="p-0 m-0 col-xs-12 col-sm-6 col-md-3" style="position: relative; overflow: hidden;">
           <a href="http://fki.ums.edu.my/fki/programmes-list/">
-          <img id="imageBox" src="img/programmes.jpg"></img>
+          <img id="imageBox" src="<?= base_url('img/programmes.jpg')?>"></img>
           <h3 style="pointer-events: none;"class="centered text-white">PROGRAMMES</h3>
           </a>
         </div>
         <div class="p-0 m-0 col-xs-12 col-sm-6 col-md-3" style="position: relative; overflow: hidden;">
           <a href="http://fki.ums.edu.my/fki/admission/">
-          <img id="imageBox" src="img/admission.jpg"></img>
+          <img id="imageBox" src="<?= base_url('img/admission.jpg')?>"></img>
           <h3 style="pointer-events: none;"class="centered text-white">ADMISSION</h3>
           </a>
         </div>
         <div class="p-0 m-0 col-xs-12 col-sm-6 col-md-3" style="position: relative; overflow: hidden;">
           <a href="http://fki.ums.edu.my/fki/research-unit">
-          <img id="imageBox" src="img/research.jpg"></img>
+          <img id="imageBox" src="<?= base_url('img/research.jpg')?>"></img>
           <h3 style="pointer-events: none;"class="centered text-white">RESEARCH</h3>
           </a>
         </div>
         <div class="p-0 m-0 col-xs-12 col-sm-6 col-md-3" style="position: relative; overflow: hidden;">
           <a href="http://fki.ums.edu.my/fki/alumni/">
-          <img id="imageBox" src="img/alumni.png"></img>
+          <img id="imageBox" src="<?= base_url('img/alumni.png')?>"></img>
           <h3 style="pointer-events: none;"class="centered text-white">ALUMNI</h3>
           </a>
         </div>
@@ -147,7 +147,7 @@
     <!--MEDIA-->
     <div class="container mx-auto" style="max-width: 1200px;">
       <video class="video-js video vjs-big-play-centered" controls preload="auto" data-setup="{}">
-          <source src="videos/videoplayback.mp4" type="video/mp4"/>
+          <source src="<?= base_url('videos/videoplayback.mp4')?>" type="video/mp4"/>
             <p class="vjs-no-js">
                To view this video please enable JavaScript, and consider upgrading to a
                web browser that

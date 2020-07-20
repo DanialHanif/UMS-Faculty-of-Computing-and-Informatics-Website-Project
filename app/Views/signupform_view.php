@@ -6,7 +6,16 @@
         </div>
         <div class="container">
             <hr class="my-4">
-            <form class="needs-validation" id="formSignUp" action="Signup/addnew" method="post" novalidate>
+            <?php 
+            if(isset($validation)){
+                echo '
+                <div class="alert alert-danger" role="alert">'
+                .$validation->listErrors().
+                '</div>';
+            }
+            ?>
+        
+            <form class="needs-validation" id="formSignUp" action="<?= base_url('Signup/addnew')?>" method="post">
                 <div class="form-group">
                     <label for="name"><b>Company Name</b></label>
                     <input type="text" class="form-control" placeholder="Enter company name" name="cName" required>

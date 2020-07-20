@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Universiti Malaysia Sabah - Faculty of Computing and Informatics">
     <title>Faculty of Computing and Informatics</title>
-    <link rel="icon" href="img/favicon.ico" />
+    <link rel="icon" href="<?= base_url('img/favicon.ico')?>" />
     <link rel="canonical" href="http://fki.ums.edu.my/fki/">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/video-js.css">
-    <script src="js/videojs-ie8.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url("css/bootstrap.css")?>">
+    <link rel="stylesheet" href="<?= base_url("css/style.css")?>">
+    <link rel="stylesheet" href="<?= base_url("css/video-js.css")?>">
+    <script src="<?= base_url('js/videojs-ie8.min.js')?>"></script>
 </head>
 
 <!--HEADER-->
 <header>
     <div class="d-flex mx-auto justify-content-between" style="max-width: 1200px; position:relative">
-        <a class="navbar-brand my-auto" href="index.html"><img class="w-100" src="img/logo-white.png"></a>
+        <a class="navbar-brand my-auto" href="<?= base_url('Home')?>"><img class="w-100" src="<?= base_url('img/logo-white.png')?>"></a>
         <button onclick="showSearchBox()" data-toggle="tooltip" data-placement="left" title="Search" class="btn m-3 searchlink" id="searchButton"><i class="fas fa-search"></i></button>
         <div id="search-form" class="search-form shadow">
             <form class="form-inline">
@@ -41,25 +41,25 @@
             <div class="collapse navbar-collapse mx-auto" id="navBarResponsive" style="max-width: 1200px">
                 <ul class="navbar-nav mx-auto flex-wrap justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ((stristr(uri_string(), "Home")) || (uri_string() === '/') ? 'active' : '') ?>" href="Home">HOME</a>
+                        <a class="nav-link <?= (stristr(uri_string(), "Home")) || (uri_string() === '/') ? 'active' : '' ?>" href="<?= base_url('Home')?>">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="about.html">ADMISSIONS</a>
+                        <a class="nav-link disabled" href="<?= base_url('About')?>">ADMISSIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="about.html">RESEARCH</a>
+                        <a class="nav-link disabled" href="<?= base_url('About')?>">RESEARCH</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ((stristr(uri_string(), "About")) ? 'active' : '') ?>" href="About">ABOUT US</a>
+                        <a class="nav-link <?= (stristr(uri_string(), "About") ? 'active' : '') ?>" href="<?= base_url('About')?>">ABOUT US</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="about.html">ALUMNI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ((stristr(uri_string(), "Contact")) ? 'active' : '') ?>" href="Contact">CONTACT</a>
+                        <a class="nav-link <?= (stristr(uri_string(), "Contact") ? 'active' : '') ?>" href="<?= base_url('Contact')?>">CONTACT</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?php echo ((stristr(uri_string(), "Login")) ? 'active' : '') ?>" href="Login" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGIN</a>
+                        <a class="nav-link dropdown-toggle <?= (stristr(uri_string(), "Login") ? 'active' : '') ?>" href="<?= base_url('Login')?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGIN</a>
                         <div class="dropdown-menu">
                             <form class="px-4 py-3 mx-auto">
                                 <div class="form-group">
@@ -80,7 +80,7 @@
                                 </div>
                             </form>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="Signup">Don't have account? Sign up</a>
+                            <a class="dropdown-item" href="<?= base_url('Signup')?>">Don't have account? Sign up</a>
                             <a class="dropdown-item" href="">Forgot password?</a>
                         </div>
                     </li>
