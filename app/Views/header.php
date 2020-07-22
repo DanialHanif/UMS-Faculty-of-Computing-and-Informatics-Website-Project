@@ -61,14 +61,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle <?= (stristr(uri_string(), "Login") ? 'active' : '') ?>" href="<?= base_url('Login')?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGIN</a>
                         <div class="dropdown-menu">
-                            <form class="px-4 py-3 mx-auto">
+                            <form class="px-4 py-3 mx-auto" action="<?= base_url('Login/verifyUser') ?>" method="post" novalidate>
                                 <div class="form-group">
                                     <label for="emailForm">Email address</label>
-                                    <input type="email" class="form-control" id="emailForm" placeholder="Email">
+                                    <input type="email" class="form-control" id="emailForm" placeholder="Email" name="cEmail">
                                 </div>
                                 <div class="form-group">
                                     <label for="passwordForm">Password</label>
-                                    <input type="password" class="form-control" id="passwordForm" placeholder="Password">
+                                    <input type="password" class="form-control" id="passwordForm" placeholder="Password" name="cPassword">
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="rememberCheck">
@@ -78,10 +78,10 @@
                                 <div class="clearfix">
                                     <button type="submit" class="btn text-white" style="background-color: #D83963">Sign in</button>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= base_url('Signup')?>">Don't have account? Sign up</a>
+                                <a class="dropdown-item" href="">Forgot password?</a>
                             </form>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?= base_url('Signup')?>">Don't have account? Sign up</a>
-                            <a class="dropdown-item" href="">Forgot password?</a>
                         </div>
                     </li>
                 </ul>
