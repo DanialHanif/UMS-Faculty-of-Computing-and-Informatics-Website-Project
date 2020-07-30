@@ -2,7 +2,10 @@
 
 namespace App\Controllers;
 
-use CustomerModel;
+use StudentModel;
+use StaffModel;
+use NewsModel;
+use EventModel;
 
 class Dashboard extends BaseController
 {
@@ -16,9 +19,25 @@ class Dashboard extends BaseController
 		} else {
 			echo view('header_logged');
 		}
-		$model = new CustomerModel();
-		$data = $model->getCustomerData(session()->get('logged_in')['id']);
-		echo view('customer_main_view', $data);
+		if (session()->get('logged_in')['type'] =='staff') {
+			$model = new StaffModel;
+			$data = $model->getData(session()->get('logged_in')['id']);
+			$_SESSION['logged_in']['firstname'] = $data['staffFirstName'];
+			$_SESSION['logged_in']['lastname'] = $data['staffLastName'];
+		} else {
+			$model = new StudentModel;
+			$data = $model->getData(session()->get('logged_in')['id']);
+			$_SESSION['logged_in']['firstname'] = $data['studentFirstName'];
+			$_SESSION['logged_in']['lastname'] = $data['studentLastName'];
+		}
+
+		$news = new NewsModel;
+		$data['news'] = $news->getAllNews(5);
+		
+		$news = new EventModel;
+		$data['events'] = $news->getAllEvent(5);
+
+		echo view('dashboard_view', $data);
 		echo view('footer');
 	}
 

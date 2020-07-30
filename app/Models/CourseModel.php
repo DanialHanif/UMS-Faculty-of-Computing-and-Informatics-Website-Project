@@ -19,7 +19,7 @@ class CourseModel extends \CodeIgniter\Model
     public function getAllCourses()
     {
         $db = db_connect();
-        $query = $db->table('courses')->get();
+        $query = $db->table('courses')->orderBy('courseCode')->get();
 
         if (!is_null($query->getRow())) {
             return $query;

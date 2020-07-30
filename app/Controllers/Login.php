@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use CustomerModel;
+use StudentModel;
+use StaffModel;
 
 class Login extends BaseController
 {
@@ -16,7 +17,7 @@ class Login extends BaseController
 	{
 		if (session()->get('logged_in')) {
 
-			echo view('header_logged');
+			return redirect()->to('/lab6/public/Dashboard');
 		} else {
 			echo view('header');
 		}
@@ -28,7 +29,8 @@ class Login extends BaseController
 	public function verifyUser()
 	{
 
-		$model = new CustomerModel;
+		
+
 		$rules = [
 			'cEmail' 		=> ['label' => 'Login Email', 'rules' => 'trim|required|valid_email'],
 			'cPassword' 	=> ['label' => 'Login Password', 'rules' => 'trim|required|min_length[6]|max_length[20]']
@@ -39,8 +41,8 @@ class Login extends BaseController
 		} else {
 			$data['email'] = $this->request->getPost('cEmail');
 			$data['password'] = $this->request->getPost('cPassword');
-			$cNumber = $this->checkDatabase($data['email'], $data['password']);
-			if(is_bool($cNumber)){
+			$id = $this->checkDatabase($data['email'], $data['password']);
+			if(is_bool($id)){
 				return redirect()->to('/lab6/public/Login');	
 			}
 			else{
@@ -55,19 +57,37 @@ class Login extends BaseController
 
 	public function checkDatabase($email, $password){
 
-        $model = new CustomerModel;
+		$rules = [
+			'cEmail' 		=> ['label' => 'Login Email', 'rules' => 'trim|is_unique[stafflogin.email]'],
+		];
+
+		if (!$this->validate($rules)) {
+			$model = new StaffModel;
+		} else {
+			$model = new StudentModel;
+		}
+        
         $result = $model->verifyLogin($email, $password);
 
         if(!is_bool($result)){
 
-			$data = [
 
-				'id' => $result->getRow()->customerNumber,
-				'name' => $result->getRow()->customerName,
-				'firstName' => $result->getRow()->contactFirstName,
-				'email' => $email
-
-			];
+			if (isset($result->getRow()->staffNumber)) {
+				$data = [
+					'id' => $result->getRow()->staffNumber,
+					'firstName' => $result->getRow()->staffFirstName,
+					'email' => $email,
+					'type' => 'staff'
+				];
+			} else {
+				$data = [
+					'id' => $result->getRow()->studentNumber,
+					'firstName' => $result->getRow()->studentFirstName,
+					'email' => $email,
+					'type' => 'student'
+	
+				];
+			}
 
 			session()->set('logged_in', $data);
 			return $data['id'];

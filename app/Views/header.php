@@ -18,13 +18,7 @@
 <header>
     <div class="d-flex mx-auto justify-content-between" style="max-width: 1200px; position:relative">
         <a class="navbar-brand my-auto" href="<?= base_url('Home')?>"><img class="w-100" src="<?= base_url('img/logo-white.png')?>"></a>
-        <button onclick="showSearchBox()" data-toggle="tooltip" data-placement="left" title="Search" class="btn m-3 searchlink" id="searchButton"><i class="fas fa-search"></i></button>
-        <div id="search-form" class="search-form shadow">
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn my-2 my-sm-0 text-white" style="background-color: #D83963;" type="submit">Search</button>
-            </form>
-        </div>
+        
     </div>
 
 </header>
@@ -56,10 +50,10 @@
                         <a class="nav-link disabled" href="about.html">ALUMNI</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= (stristr(uri_string(), "Contact") ? 'active' : '') ?>" href="<?= base_url('Contact')?>">CONTACT</a>
+                        <a class="nav-link <?= (stristr(uri_string(), "Contact")) ? 'active' : '' ?>" href="<?= base_url('Contact')?>">CONTACT</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle <?= (stristr(uri_string(), "Login") ? 'active' : '') ?>" href="<?= base_url('Login')?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGIN</a>
+                        <a class="nav-link dropdown-toggle <?= (stristr(uri_string(), "Login")) ? 'active' : '' ?>" href="<?= base_url('Login')?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGIN</a>
                         <div class="dropdown-menu">
                             <form class="px-4 py-3 mx-auto" action="<?= base_url('Login/verifyUser') ?>" method="post" novalidate>
                                 <div class="form-group">

@@ -9,14 +9,14 @@ class StaffModel extends \CodeIgniter\Model
     protected $table = 'staff';
     protected $primaryKey = 'staffNumber';
 
-    protected $allowedFields = ['staffNumber', 'staffLastName', 'staffFirstName','dateofbirth', 'extension', 'officeCode', 'reportsTo', 'jobTitle', 'addressLine1', 'addressLine2', 'city', 'postalCode', 'country', 'state', 'gender', 'active'];
+    protected $allowedFields = ['staffNumber', 'staffLastName', 'staffFirstName','dateofbirth', 'phone', 'officeCode', 'reportsTo', 'jobTitle', 'addressLine1', 'addressLine2', 'city', 'postalCode', 'country', 'state', 'active'];
 
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function getAllStaff()
+    public function getAllData()
     {
         $db = db_connect();
         $query = $db->table('staff')->get();
@@ -28,11 +28,11 @@ class StaffModel extends \CodeIgniter\Model
         $db->close();
     }
 
-    public function getStaffByCondition($condition)
+    public function getDataByCondition($condition)
     {
 
         $db = db_connect();
-        $query = $db->table('staff')->getWhere([$condition]);
+        $query = $db->table('staff')->getWhere($condition);
         if (!is_null($query->getRow())) {
             return $query;
         } else {
@@ -41,11 +41,11 @@ class StaffModel extends \CodeIgniter\Model
         $db->close();
     }
 
-    public function registerNewStaff($data)
+    public function registerNewData($data)
     {
         $db = db_connect();
         $db->transStart();
-        $newstaffNumber = $db->table('staff')->selectMax('staffNumber')->get()->getRow();
+        $newstaffNumber = $db->table('staff')->selectMax('staffNumber')->get()->getRow()->staffNumber + 1;
         $data['active'] = 1;
 
         $login = [
@@ -54,6 +54,10 @@ class StaffModel extends \CodeIgniter\Model
             'password' => $data['password'],
             'active' => $data['active']
         ];
+
+        if($data['reportsTo'] == "") {
+            $data['reportsTo'] = NULL;
+        }
         unset($data['email'], $data['password']);
         $this->insert($data);
         $db->table('stafflogin')->insert($login);
@@ -68,7 +72,7 @@ class StaffModel extends \CodeIgniter\Model
         }
     }
 
-    public function updateStaff($id, $data)
+    public function updateData($id, $data)
     {
         $db = db_connect();
         $db->transStart();
@@ -114,8 +118,8 @@ class StaffModel extends \CodeIgniter\Model
     {
         $db = db_connect();
         $sql = $db->table('stafflogin');
-        $sql = $sql->select('studetlogin.staffNumber, stafflogin.password, staffs.staffName, staffs.staffFirstName');
-        $sql = $sql->join('staffs', 'staffs.staffNumber = stafflogin.staffNumber');
+        $sql = $sql->select('stafflogin.staffNumber, stafflogin.password, staff.staffFirstName');
+        $sql = $sql->join('staff', 'staff.staffNumber = stafflogin.staffNumber');
         $sql = $sql->where('stafflogin.email', $email);
         $sql->limit(1);
         $query = $sql->get();
@@ -132,7 +136,7 @@ class StaffModel extends \CodeIgniter\Model
         }
     }
 
-    public function getStaffData($id)
+    public function getData($id)
     {
         $query = $this->find($id);
         if (!is_null($query)) {

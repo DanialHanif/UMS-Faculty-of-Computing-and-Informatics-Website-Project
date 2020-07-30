@@ -24,10 +24,6 @@
                     <input type="password" class="form-control" placeholder="Enter Password" name="cPassword" value="<?= set_value('password') ?>" required>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="remember" id="rememberBox">
-                    <label class="form-check-label" for="rememberBox">Remember Me</label>
-                </div>
                 <div class="clearfix">
                     <button type="submit" class="btn btn-success mt-4">Sign in</button>
                 </div>

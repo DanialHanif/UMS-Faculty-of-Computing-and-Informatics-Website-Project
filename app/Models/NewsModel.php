@@ -16,10 +16,10 @@ class NewsModel extends \CodeIgniter\Model
         parent::__construct();
     }
 
-    public function getAllNews()
+    public function getAllNews($limit)
     {
         $db = db_connect();
-        $query = $db->table('news')->get();
+        $query = $db->table('news')->get($limit);
 
         if (!is_null($query->getRow())) {
             return $query;

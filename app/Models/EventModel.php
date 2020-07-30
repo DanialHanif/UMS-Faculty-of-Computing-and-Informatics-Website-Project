@@ -16,10 +16,10 @@ class EventModel extends \CodeIgniter\Model
         parent::__construct();
     }
 
-    public function getAllEvent()
+    public function getAllEvent($limit)
     {
         $db = db_connect();
-        $query = $db->table('events')->get();
+        $query = $db->table('events')->get($limit);
 
         if (!is_null($query->getRow())) {
             return $query;

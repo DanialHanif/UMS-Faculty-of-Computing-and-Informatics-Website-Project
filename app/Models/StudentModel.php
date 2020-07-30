@@ -17,7 +17,7 @@ class StudentModel extends \CodeIgniter\Model
         parent::__construct();
     }
 
-    public function getAllStudents()
+    public function getAllData()
     {
         $db = db_connect();
         $query = $db->table('students')->get();
@@ -48,11 +48,11 @@ class StudentModel extends \CodeIgniter\Model
         $db->close();
     }
 
-    public function registerNewStudent($data)
+    public function insertNewData($data)
     {
         $db = db_connect();
         $db->transStart();
-        $newstudentNumber = $db->table('students')->selectMax('studentNumber')->get()->getRow();
+        $newstudentNumber = $db->table('students')->selectMax('studentNumber')->get()->getRow()->studentNumber + 1;
         $data['active'] = 1;
 
         $login = [
@@ -75,7 +75,7 @@ class StudentModel extends \CodeIgniter\Model
         }
     }
 
-    public function updateStudent($id, $data)
+    public function updateData($id, $data)
     {
         $db = db_connect();
         $db->transStart();
@@ -91,37 +91,12 @@ class StudentModel extends \CodeIgniter\Model
         }
     }
 
-    //to be removed, only staff
-    public function insertNewTransaction($data1, $data2)
-    {
-        $db = db_connect();
-        $db->transStart();
-        $currentOrderNumber = $db->table('orders')->selectMax('orderNumber')->get()->getRow()->orderNumber + 1;
-        $builder = $db->table('orders');
-        $builder->set('orderNumber', $currentOrderNumber);
-        $builder->set($data1);
-        $builder->insert();
-        $builder = $db->table('orderdetails');
-
-        for ($i = 0; $i < count($data2); $i++) {
-            $data2[$i]['orderNumber'] = $currentOrderNumber;
-        }
-        $builder->insertBatch($data2);
-        $db->transComplete();
-        if ($db->transStatus() === FALSE) {
-
-            echo 'Transaction Error Occured!';
-        } else {
-
-            echo 'Transaction Success!';
-        }
-    }
 
     public function verifyLogin($email, $password)
     {
         $db = db_connect();
         $sql = $db->table('studentlogin');
-        $sql = $sql->select('studetlogin.studentNumber, studentlogin.password, students.studentName, students.studentFirstName');
+        $sql = $sql->select('studentlogin.studentNumber, studentlogin.password, students.studentFirstName, students.studentLastName');
         $sql = $sql->join('students', 'students.studentNumber = studentlogin.studentNumber');
         $sql = $sql->where('studentlogin.email', $email);
         $sql->limit(1);
@@ -139,7 +114,7 @@ class StudentModel extends \CodeIgniter\Model
         }
     }
 
-    public function getStudentData($id)
+    public function getData($id)
     {
         $query = $this->find($id);
         if (!is_null($query)) {
@@ -149,7 +124,7 @@ class StudentModel extends \CodeIgniter\Model
         }
     }
 
-    public function getStudentByCondition($condition)
+    public function getDataByCondition($condition)
     {
 
         $db = db_connect();
