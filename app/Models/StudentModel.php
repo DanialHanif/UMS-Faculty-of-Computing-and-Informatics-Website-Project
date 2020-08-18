@@ -128,7 +128,7 @@ class StudentModel extends \CodeIgniter\Model
     {
 
         $db = db_connect();
-        $query = $db->table('students')->getWhere([$condition]);
+        $query = $db->table('students')->getWhere($condition);
         if (!is_null($query->getRow())) {
             return $query;
         } else {

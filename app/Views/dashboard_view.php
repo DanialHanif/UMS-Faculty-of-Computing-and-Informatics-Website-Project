@@ -6,7 +6,7 @@
             <p>Welcome back!</p>
         </div>
         <div class= "float-right">
-            <h2>Your current CGPA:</h2>
+            
         </div>
         </div>
         <div class="container">
