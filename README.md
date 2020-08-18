@@ -15,7 +15,7 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 
 MySQL 5.1 or higher
 
-### Core Features in progress
+## Core Features in progress
 - [ ] Unified Login (Students/Staff)
 - [ ] Dashboard
   - [ ] Registered Courses
@@ -38,3 +38,6 @@ MySQL 5.1 or higher
 - [ ] Page Contact
 - [ ] Class
 - [ ] Dark Mode
+
+## Contribution
+Feel free to make pull requests
