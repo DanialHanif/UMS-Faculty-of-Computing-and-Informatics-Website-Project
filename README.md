@@ -1,6 +1,6 @@
 # UMS Faculty of Computing and Informatics Website
 
-This website was developed for Project II of KP24403 - Introduction to Web Technology. It uses Codeigniter 4.0.3 as its framework for high performance and security.
+This website was developed for Project II of KP24403 - Introduction to Web Technology. It uses [Codeigniter](https://github.com/codeigniter4/CodeIgniter4) as its framework for high performance and security.
 
 ## Server Requirements
 PHP 7.6 or higher with the following extensions installed:
