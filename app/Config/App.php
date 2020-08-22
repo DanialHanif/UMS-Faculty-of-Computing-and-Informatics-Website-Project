@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost/lab6/public';
+	public $baseURL = 'http://localhost:8080/';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ class App extends BaseConfig
 	| variable so that it is blank.
 	|
 	*/
-	public $indexPage = '';
+	public $indexPage = 'index.php';
 
 	/*
 	|--------------------------------------------------------------------------
